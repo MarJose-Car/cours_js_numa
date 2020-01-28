@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="FR-fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Entrainement JS</title>
+        <style>
+        </style>
+        <!-- on peut charger un fichier js ou on peut créer le script dans la page -->
+        <!-- <script src="monscript.js"></script> -->
+    </head>
+    <body>
+        <!-- contenu html -->
+        
+
+        <script>
+            // commentaires pour la ligne
+            document.write('<h1>Entrainement Javascript</h1>');
+            document.write('<h2>Commentaires, Sintaxe</h2><p>Voir code source</p>');
+            /*commentaire
+                pour un bloc de texte
+            */
+            /* Entrainement:
+                -- 1 -- Commentaires, sintaxe
+                -- 2 -- Affichache
+                -- 3 -- Variables
+                -- 4 -- Types de Donnees
+                -- 5 -- Constantes
+                -- 6 -- Concatenation
+                -- 7 -- Opérateurs Arithmètiques
+                -- 8 -- Conditions
+                -- 9 -- Opérateurs
+
+            */
+            /*****************************************1 Commentaires, syntaxe************************************************
+            */
+            // toutes les intructions javascript se finissent para un point virgule (;)
+            // j'effectue un commentaire de ligne avc double slash (//)
+            /* commentaire 
+            sur
+            // plusieurs lignes (slaxh-étoile/étoile-slash
+
+
+            /*------------------------------------------------------------------------------------------------------
+            ---------------------------------------2 AFFICHACHE---------------------------------------------------
+            -----------------------------------------------------------------------------------------------------
+            */
+            // document.write('mon premier message');
+            document.write('<h2> 2 - Affichache</h2>');
+
+            console.info('informations à envoyer dans la console');
+            console.log('la même chose que info (petite icone en moins)');
+
+            //boite de dialogue
+            //boite alerte
+            // alert('Ceci est un message alerte');
+            //confirm
+            // confirm('Confirmez-vous');
+            //prompt permet de récupérer une donnée de l'utilisateur
+            // prompt('Quel est votre âge');
+
+            /* ---------------------------------------------------------------------------------------------------------------
+            ------------------------------------------3 - Variables -----------------------------------------------------------
+            -------------------------------------------------------------------------------------------------------------------
+            */
+            document.write('<h2> 3 - Variables</h2>');
+            /* Une variable est une boite virtuel, espace de mémoire dans laquelle nous allons stoctocker une donnée. Cette donnée peut être de differents types, comme des mots, des chiffres ou autrs (voir chapitre sue les types de données)*/
+            //Le mot vlé "var" permet de déclarer une variable nommée "maBoite":
+            //caractères acceptés: de 0 à 9, de A à Z, de a à z, + ($)ou(_) mais jamais comme premier ou dernier caractère et pas de caractères spéciaux
+            //Une variable doit d'abord être déclarée : Déclaration
+            var maBoite;
+            //nous lui affectons ensuite une valeur : Affectation
+            maBoite = 10;
+            document.write(maBoite);
+
+            //Affectation de la valeur via un prompt rempli par l'utilisateur
+            //Exemple de déclaration et affectation dans la même instruction
+            // var sonAge = prompt('Quel est votre âge?');
+            // document.write(sonAge);
+
+            //Possibilités de déclarer un ensemble des variables
+            var prenom = 'Sylvie', nom = 'Dupont', genre ='Feminin';
+            console.log(prenom);
+
+            prenom = 'Martine';
+            prenom = 'Robert';
+                console.log(prenom);
+                console.log(nom);
+            
+            document.write('<br>'+prenom+'<br>');
+
+            var fruits ='Pommme';
+            console.log(fruits);
+
+            //contrairement au = d'affectation qui remplace la valeur de la variable, j'utilise ici (+=)
+            //qui va ajouter à la valeur de la variable
+            //
+
+            fruits += ' Fraise ';
+            console.log(fruits);
+            fruits += ' Mangue ';
+             console.log(fruits);
+
+            var note_eval = 12;
+             console.log(note_eval);
+             note_eval += 2;
+             console.log(note_eval);
+
+             //Si je fais appel à une variable qui n'a pas été déclarée, j'aurai un message d'erreur, c'est à éviter
+             //je peux garder une variable sans definnir son contenu, mais si je fais appel à elle, elle sera undefined
+
+             var quelqueChose;
+             console.log(quelqueChose);
+
+             var autreChose;
+             console.log(autreChose);
+             //Je peux déclarer une variable avec le mot clef 'let' (variable Let) ni var, ni let): variable globale
+             //Je peux déclarer de manière globale (sans mot clf ni var, ni let): mais je dois lui conferer une valeur : variable globale
+
+             let maNouvelleVariable;
+             console.log(maNouvelleVariable);
+
+             maTroisiemeVariable ='test';
+             console.log(maTroisiemeVariable);
+
+              /* ---------------------------------------------------------------------------------------------------------------
+              ------------------------------------------4 - Types de Donnees -----------------------------------------------------------
+              -------------------------------------------------------------------------------------------------------------------
+              */
+
+              document.write('<h2> 4 - Types de Données</h2>');
+
+            /* Les trois principaux types de données (appeles primitif) sont les string(chaine de caractères)/ number (données numériques) / boolean (données booléennes vrai ou faux)*/
+            //Les srting :
+            var monTexte="Voici une phrase écrite dans un double quote";
+            // l'anti slash permet d'échapper un caractère dans la string
+            var monTexte2='Voici une phrase écrite dans un simple quote aujourd\'hui';
+            console.log(monTexte2);
+            document.write(monTexte2+'<br>');
+
+            var monTexte3 = '55';
+             console.log(monTexte3+ '<br>');
+
+               var monTexte3 = '5.5';
+                console.log(monTexte3);
+            //type Number
+            var chiffre = 55; //affectation se fait sans quote
+            var negatif = -10; //Tout les types d'écritures numériques sont possibles
+            //Type booléen : il ne prend que deux valeurs TRUE ou FALSE
+            var choix = true;
+            console.log(choix);
+
+            var choix = false;
+            console.log(choix);
+
+            //Typeof permet de vérifier le type d'une variable
+            document.write(typeof(monTexte)+'<br>');
+            document.write(typeof(chiffre)+'<br>');
+            document.write(typeof (choix)+'<br>');
+
+            var monChiffre = '50';
+            var monChiffre2 = '20';
+            console.log(monChiffre+monChiffre2)
+            console.log(typeof(monChiffre));
+
+            // var ageUtilisateur = prompt ('Quel est votre âge?');
+            // console.log(typeof(ageUtilisateur));
+
+             /* ---------------------------------------------------------------------------------------------------------------
+            ------------------------------------------5 - Constantes -----------------------------------------------------------
+            -------------------------------------------------------------------------------------------------------------------
+            */
+            document.write('<h2> 5 - Constantes</h2>');
+            /*Les constantes ne sont jamais destinées a varier, elles sont déclarées par le mot clé (const) et par convention nous les nommerons en majuscules, afin de les deferencier des variables*/
+
+            const BOUGE_PAS = 'ma constante impossible à modifier';
+            document.write(BOUGE_PAS+'<br>');
+            //const BOUGE_PAS ='nouveau contenu'; induira des messages d'erreur que d'essayer de redefinir une constante
+
+              /* ---------------------------------------------------------------------------------------------------------------
+              ------------------------------------------6 - Concatenation -----------------------------------------------------------
+              -------------------------------------------------------------------------------------------------------------------
+              */
+              //nous concatenons les string avec le symbole
+              var prenom = 'Bruce', nom 
+                          
+              ='Wayne';
+              //écrire dans le document "Bruce Wayne"
+              document.write(prenom +' '+ nom);
+              document.write('<br>'+'<strong>'+prenom+' '+nom+'</strong>');
+
+              //realiser un prompt demandant son age à l'utilisateur, récuperer cette donnéé et l'utiliser pour afficher : vous avez XX ans !
+
+            //    var vousAvez = prompt('Quel est votre âge?');
+            //     document.write('<br>'+'Vous avez'+' '+vousAvez+' '+'ans');
+
+                  /* ---------------------------------------------------------------------------------------------------------------
+                ------------------------------------------7  Opérateurs Arithmètiques -----------------------------------------------------------
+                -------------------------------------------------------------------------------------------------------------------
+                */
+                document.write('<h2> 7 - OPERATEURS ARITHMETIQUES</h2>');
+
+                //additions
+                var addition = 10 + 5;
+                document.write(addition+ '<br>');  //resultat 15
+
+                //soustraction
+                var soustraction = 16 - 4;
+                document.write(soustraction+ '<br>');  //resultat 12
+
+                //multi^lication
+                var multiplication = 5 * 4;
+                document.write(multiplication+ '<br>');  //resultat 20
+
+                //division
+                var division = 20 / 4;
+                document.write(division+ '<br>'); //resultat 5
+
+                //modulo (j'ai dix billes pour trois personnes, il m'en reste une, Le modulo exprime ce qui reste de l'opération)
+                var modulo = 10% 3;
+                document.write(modulo+ '<br>'); // resultat 1
+
+                var chiffre1 = 10, chiffre2 = 5;
+                var resultat = chiffre1 + chiffre2; //tester avec ( + - * / %)
+                document.write(resultat + '<br>'); //resultat 15
+
+                var chiffre3 = 20;
+                chiffre3 = chiffre3 + 10;
+                document.write(chiffre3 + '<br>'); //resultat 30
+
+                // chiffre3 += 5;
+                // document.write(chiffre3 + '<br>'); //resultat 35
+
+                //   chiffre3 -= 5;
+                //     document.write(chiffre3 + '<br>'); //resultat 25
+
+                //   chiffre3 *= 5;
+                //     document.write(chiffre3 + '<br>'); //resultat 150
+
+                  chiffre3 %= 5; // fonctionne avec tous les opérateurs -= / *= /+= / %= /= 
+                    document.write(chiffre3 + '<br>'); //resultat 0
+
+                //recuperer dans un prompt La valeur souhaitée par l'utilisateur.
+                //envoyez une alerte indiquant le resultat au carré et au cube
+
+                // var vousAvez= prompt('choisissez un chiffre?');
+                // var carre = vousAvez * vousAvez;
+                // var cube =  vousAvez * vousAvez * vousAvez;
+                // alert(carre + ' - ' +  cube);
+                
+                // var proposition = prompt('Saisissez une valeur');
+                // var carre = proposition*proposition;
+                // var cube = proposition*proposition*proposition;
+                // alert('Pour ' + proposition +'. Le carré est : ' + carre +', le cube est :'+ cube);
+                     /* ---------------------------------------------------------------------------------------------------------------
+                   ------------------------------------------8 Conditions -----------------------------------------------------------
+                   -------------------------------------------------------------------------------------------------------------------
+                   */
+                   document.write('<h2> 8 - Conditions</h2>');
+                   var a = 10, b =5, c = 2;
+                   if(a > b){
+                       document.write('A est supérieur à B <br>');
+                   }
+                   else {
+                        document.write('A n\'est supérieur à B <br>');
+                   }
+                    var a = '5', b = 5, c = 2;
+                    if (a == b) {
+                        document.write('A est égal à B <br>');
+                    }
+                    else {
+                        document.write('A est différent de B <br>');
+                    }
+                    //if et AND
+                    var a = 10, b = 5, c = 2;
+                    if(a > b && b > c){
+                        document.write('Ok pour les deux conditions <br>');
+                    }
+                    else{
+                        document.write(' Une condition au moins, n\'est pas remplie <br>');
+                    }
+                    // if et OR
+                    var a = 10, b = 5, c = 9;
+                    if (a > b || b > c) {
+                        document.write('Ok au moins une des conditions est valable<br>');
+                    }
+                    else {
+                        document.write(' Aucune des conditions, n\'est pas remplie <br>');
+                    }
+
+                    //if multiples
+                    var a = 5, b = 5, c = 9;
+
+                    if(a<5){
+                         document.write('A est inférieur à 5 <br>');
+                    }
+                    else if(a==5){
+                         document.write('A est égal à 5 <br>');
+                    }
+                    else if (a > 5) {
+                        document.write('A est supérieur à 5 <br>');
+                    }
+                    else{
+                        document.write('A n\'est sans doute pas un nombre<br>');
+                    }
+
+                
+                    // if (a < 5) {
+                    //     document.write('A est inférieur à 5 <br>');
+                    // }
+                    // if (a == 5) {
+                    //     document.write('A est égal à 5 <br>');
+                    // }
+                    // if (a > 5) {
+                    //     document.write('A est supérieur à 5 <br>');
+                    // }
+                    // else {
+                    //     document.write('A n\'est sans doute pas un nombre<br>');
+                    // }
+
+                       /* ---------------------------------------------------------------------------------------------------------------
+                    ------------------------------------------9 Les Opérateurs -----------------------------------------------------------
+                    -------------------------------------------------------------------------------------------------------------------
+                    */
+                     document.write('<h2> 9 - Les Opérateurs</h2>');
+                     /* 
+                     Exemple : var var1 = 3, var2 = 4;
+                     Egal (==) va renvoyer TRUE si les operandes sont égales en valeur
+                     3 == var1
+                     '3' == var1
+                     3 == '3'
+
+                     Egal (===) va renvoyer TRUE si les operandes sont égales en VALEUR et en TYPE
+                     var1 === 3
+                     3 === var1
+
+                     Différent de (!=)(l'enverse du double égal) renvoye True si les operandes NE SONT PAS EGALES
+                     4!= var1
+                     var2!=var1
+
+                     Different de (!==) Renvoye TRUE si les operandes ne sont pas du même types ET/OU pas égales
+
+                     Supérieur à (>) Renvoye TRUE si l'operande de gauche est plus grande UE L4OPERANDE DE DROITE
+
+                     Inférieur à (<) Renvoye TRUE si l'operande de gauche est plus petite que l'operande de droite
+
+                     Superieur ou egal (>=) Renvoye TRUE si l'operande de gauche est supérieur ou égale à celle de droite
+
+                     Inférieur ou égal (<=) Renvoye TRUE si l'operande de gauche est plus petite ou egale à celle de droite
+
+                     Conclusion : une condition renvoie toujours TRUE ou FALSE et les instructions de la condition ne seront executées QUE si la valeur de retour est TRUE
+
+                     JAVASCRIPT compte 3 operateurs logiques
+
+                            - AND --> &&
+                            - OR --> ||
+                            - NOT --> !
+
+                    L'operateur AND
+                    IL s'écrit &&. Il évalue le resultat en TRUE si les deux expressions sont TRUe.
+                    Si l'une des expressions est traitée en FALSe, alors le resultat sera false
+                        true && true => TRUE
+                        true && false => FALSE
+                        false && true => FALSE
+                        false && false => FALSE
+
+                    l'operateur OR
+                    Il s'écrit ||. Il évalue le resultat True si l'une ou l'aute ou les deux expressions sont TRUe. Si les deux expressions sont fausses alor le resultat sera False.
+                        true || true => TRUE
+                        false || true => TRUe
+                        true || false => TRUE
+                        false || false => FALSe
+
+                        L'operateur not (l'inverse de)
+                    Il s'écrit !. Il trnsform ce qui est TRUE en FALSE et ce qui est FALSE en TRUE. 
+                        !true =>FALSE
+                        !false =>TRUE
+                     */
+                     
+
+
+
+
+    
+
+
+
+
+
+        </script>
+    </body>
+</html>
