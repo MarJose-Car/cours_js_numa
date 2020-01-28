@@ -29,6 +29,7 @@
                 -- 7 -- Opérateurs Arithmètiques
                 -- 8 -- Conditions
                 -- 9 -- Opérateurs
+                -- 10 -- Boucles
 
             */
             /*****************************************1 Commentaires, syntaxe************************************************
@@ -316,66 +317,210 @@
                     // else {
                     //     document.write('A n\'est sans doute pas un nombre<br>');
                     // }
+                    
+                    //isNaN (is not a number)
 
-                       /* ---------------------------------------------------------------------------------------------------------------
-                    ------------------------------------------9 Les Opérateurs -----------------------------------------------------------
-                    -------------------------------------------------------------------------------------------------------------------
+                    var chiffre4 = 50, chiffre5 = '100', chiffre6 = 'vingt';
+                    if(!isNaN(chiffre4)){
+                        document.write('Ceci est bien un nombre <br>');
+
+                    }
+                    else{
+                        document.write('Ceci n\'est pas un nombre <br>');
+
+                    }
+                     if (!isNaN(chiffre6)) {
+                        document.write('Ceci est bien un nombre <br>');
+
+                    }
+                    else {
+                        document.write('Ceci n\'est pas un nombre <br>');
+
+                    }
+                    if (!isNaN(chiffre5)) {
+                        document.write('Ceci est bien un nombre <br>');
+
+                    }
+                    else {
+                        document.write('Ceci n\'est pas un nombre <br>');
+
+                    }
+                    var total = chiffre4 + chiffre5;
+                    console.log(total);
+
+                    // Le parseInt() est une méthode me permettant de transformer le string en number
+
+                    console.log(typeof(chiffre5));
+                    var parse = parseInt(chiffre5);
+                   
+
+
+                    console.log(typeof(parse));
+                    console.log(chiffre4 + parse);
+                    document.write('<p>' + (chiffre4+parse) +'</p>');
+
+                    console.log(typeof (parse));
+                    console.log(chiffre4 + parse);
+
+                    var chiffre8 = '182.66';
+                    console.log(parseInt(chiffre8));
+                    //équivalent ai parseInt pour les décimaux : parseFloat()
+                    console.log(parseFloat(chiffre8));
+                    //il existe une méthode pour passer un number en string: toString()
+                    var chiffre9 = chiffre4.toString();
+                    console.log(typeof(chiffre9));
+                    console.log(chiffre9);
+
+                    var parse1 = parseInt(chiffre6);
+                    console.log(typeof(parse1));
+                    console.log(parse1);
+
+                    var chiffre10 = 'cent';
+                    var parse2 = parseInt(chiffre10);
+                    console.log(typeof (parse2));
+                    console.log(parse2);
+
+                    //CONDITION SWITCH
+
+                    var couleur="jaune";
+                    switch(couleur){
+                        case 'bleu' :
+                            document.write('Vous aimez le bleu <br>');
+                        break;
+                        case 'rouge' :
+                            document.write('Vous aimez le rouge <br>');
+                        break;
+                        case 'vert':
+                            document.write('Vous aimez le vert <br>');
+                        break;
+                        // default : 
+                        //     document.write('Vous n\'aimez pas le bleu, ni le rouge, ni le vert <br>');
+                        // break
+                    }
+                    var couleur = "vert";
+                    switch (couleur){
+                        case 'bleu':
+                            document.write('Vous aimez le bleu <br>');
+                        break;
+                        case 'rouge':
+                            document.write('Vous aimez le rouge <br>');
+                        break;
+                        case 'vert':
+                            document.write('Vous aimez le vert <br>');
+                        break;
+                        default:
+                            document.write('Vous n\'aimez pas le bleu, ni le rouge, ni le vert <br>');
+                        break
+                }
+
+                if(couleur=='bleu'){
+                    document.write('Vous aimez le bleu <br>');
+                }
+                else if(couleur=='jaune'){
+                     document.write('Vous n\'aimez pas le jaune <br>');
+                }
+                 else if (couleur=='rouge') {
+                    document.write('Vous n\'aimez pas le rouge <br>');
+                }
+                else {
+                    document.write('Vous aimez le vert<br>');
+
+                }
+                   var couleur1 = 'vert', couleur2 = 'jaune', couleur3 = 'rouge', couleur4 = 'bleu';
+
+                if (couleur == couleur2) {
+                    document.write('Vous aimez le bleu <br>');
+                }
+                else if (couleur == couleur3) {
+                    document.write('Vous n\'aimez pas le jaune <br>');
+                }
+                else if (couleur == couleur4) {
+                    document.write('Vous n\'aimez pas le rouge <br>');
+                }
+                else {
+                    document.write('Vous aimez le vert<br>');
+
+                }
+
+
+                
+
+                    /* ---------------------------------------------------------------------------------------------------------------
+                ------------------------------------------9 Les Opérateurs -----------------------------------------------------------
+                -------------------------------------------------------------------------------------------------------------------
+                */
+                    document.write('<h2> 9 - Les Opérateurs</h2>');
+                    /* 
+                    Exemple : var var1 = 3, var2 = 4;
+                    Egal (==) va renvoyer TRUE si les operandes sont égales en valeur
+                    3 == var1
+                    '3' == var1
+                    3 == '3'
+
+                    Egal (===) va renvoyer TRUE si les operandes sont égales en VALEUR et en TYPE
+                    var1 === 3
+                    3 === var1
+
+                    Différent de (!=)(l'enverse du double égal) renvoye True si les operandes NE SONT PAS EGALES
+                    4!= var1
+                    var2!=var1
+
+                    Different de (!==) Renvoye TRUE si les operandes ne sont pas du même types ET/OU pas égales
+
+                    Supérieur à (>) Renvoye TRUE si l'operande de gauche est plus grande UE L4OPERANDE DE DROITE
+
+                    Inférieur à (<) Renvoye TRUE si l'operande de gauche est plus petite que l'operande de droite
+
+                    Superieur ou egal (>=) Renvoye TRUE si l'operande de gauche est supérieur ou égale à celle de droite
+
+                    Inférieur ou égal (<=) Renvoye TRUE si l'operande de gauche est plus petite ou egale à celle de droite
+
+                    Conclusion : une condition renvoie toujours TRUE ou FALSE et les instructions de la condition ne seront executées QUE si la valeur de retour est TRUE
+
+                    isNaN (is not a number) Va renvoyer True si l'élément testé est bien différent d'un nombre (on utilisera (!isNaN)pour verifier que l'élément soit bien un nombre)
+
+                    JAVASCRIPT compte 3 operateurs logiques
+
+                        - AND --> &&
+                        - OR --> ||
+                        - NOT --> !
+
+                L'operateur AND
+                IL s'écrit &&. Il évalue le resultat en TRUE si les deux expressions sont TRUe.
+                Si l'une des expressions est traitée en FALSe, alors le resultat sera false
+                    true && true => TRUE
+                    true && false => FALSE
+                    false && true => FALSE
+                    false && false => FALSE
+
+                l'operateur OR
+                Il s'écrit ||. Il évalue le resultat True si l'une ou l'aute ou les deux expressions sont TRUe. Si les deux expressions sont fausses alor le resultat sera False.
+                    true || true => TRUE
+                    false || true => TRUe
+                    true || false => TRUE
+                    false || false => FALSe
+
+                    L'operateur not (l'inverse de)
+                Il s'écrit !. Il trnsform ce qui est TRUE en FALSE et ce qui est FALSE en TRUE. 
+                    !true =>FALSE
+                    !false =>TRUE
                     */
-                     document.write('<h2> 9 - Les Opérateurs</h2>');
-                     /* 
-                     Exemple : var var1 = 3, var2 = 4;
-                     Egal (==) va renvoyer TRUE si les operandes sont égales en valeur
-                     3 == var1
-                     '3' == var1
-                     3 == '3'
+                    /* ---------------------------------------------------------------------------------------------------------------
+             ------------------------------------------10 - Boucles -----------------------------------------------------------
+             -------------------------------------------------------------------------------------------------------------------
+             */
+            document.write('<h2> 10 - Boucles</h2>');
+            
+            var i = 0;
+            while(i<= 5){
+                document.write((i+1) +'---');
+                i++; // i = i+1 //i++ permet d'incrementer ma variable
+            }
+             while (i <= 6) {
+                    document.write(i + '---');
+                    i++; 
+            }
 
-                     Egal (===) va renvoyer TRUE si les operandes sont égales en VALEUR et en TYPE
-                     var1 === 3
-                     3 === var1
-
-                     Différent de (!=)(l'enverse du double égal) renvoye True si les operandes NE SONT PAS EGALES
-                     4!= var1
-                     var2!=var1
-
-                     Different de (!==) Renvoye TRUE si les operandes ne sont pas du même types ET/OU pas égales
-
-                     Supérieur à (>) Renvoye TRUE si l'operande de gauche est plus grande UE L4OPERANDE DE DROITE
-
-                     Inférieur à (<) Renvoye TRUE si l'operande de gauche est plus petite que l'operande de droite
-
-                     Superieur ou egal (>=) Renvoye TRUE si l'operande de gauche est supérieur ou égale à celle de droite
-
-                     Inférieur ou égal (<=) Renvoye TRUE si l'operande de gauche est plus petite ou egale à celle de droite
-
-                     Conclusion : une condition renvoie toujours TRUE ou FALSE et les instructions de la condition ne seront executées QUE si la valeur de retour est TRUE
-
-                     JAVASCRIPT compte 3 operateurs logiques
-
-                            - AND --> &&
-                            - OR --> ||
-                            - NOT --> !
-
-                    L'operateur AND
-                    IL s'écrit &&. Il évalue le resultat en TRUE si les deux expressions sont TRUe.
-                    Si l'une des expressions est traitée en FALSe, alors le resultat sera false
-                        true && true => TRUE
-                        true && false => FALSE
-                        false && true => FALSE
-                        false && false => FALSE
-
-                    l'operateur OR
-                    Il s'écrit ||. Il évalue le resultat True si l'une ou l'aute ou les deux expressions sont TRUe. Si les deux expressions sont fausses alor le resultat sera False.
-                        true || true => TRUE
-                        false || true => TRUe
-                        true || false => TRUE
-                        false || false => FALSe
-
-                        L'operateur not (l'inverse de)
-                    Il s'écrit !. Il trnsform ce qui est TRUE en FALSE et ce qui est FALSE en TRUE. 
-                        !true =>FALSE
-                        !false =>TRUE
-                     */
-                     
 
 
 
