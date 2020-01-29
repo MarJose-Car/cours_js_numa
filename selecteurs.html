@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Selecteurs Javascript</title>
+        <style>
+        
+        </style>
+    </head>
+    <body>
+        <div id='conteneur'>
+            <h2 id='titre'> Mon titre de niveau 2</h2>
+
+            <div class="avion">AirBus 1</div>
+            <div class="avion">AirBus 2</div>
+            <div class="avion">AirBus 3</div>
+            <p id='first'>Paragraphe 1</p>
+            <p>Paragraphe 2</p>
+            <p title="Infobulle">Paragraphe 3</p>
+            <p>Paragraphe 4</p>
+            <p>Paragraphe 2</p>
+        </div>
+
+        <script>
+
+            //avec la function window.onload=function(){} tout le script s'executera seulement quand toute la fenêtre/page sera completement chargéé
+
+            // window.onload=function(){
+            // }
+
+          
+        // Selection Naturelle d'un ID
+
+        var monId = titre;
+        console.log(monId);
+    
+        //selection by ID
+        var monId2 =document.getElementById('titre');
+        console.log(monId2);
+
+        //selection by classname
+
+        var mesClasses = document.getElementsByClassName('avion');
+        //je récupere un ensemble : une collection HTML
+        console.log(mesClasses);
+        //je peux atteindre un des éléments de la collection grâce à l'indice [1]
+        console.log(mesClasses[1]);
+        //innerHTML définit le contenu de la balise
+        mesClasses[1].innerHTML
+        console.log(mesClasses[1].innerHTML);
+        mesClasses[1].innerHTML='Nouveau contenu';//je choisie un nouveau contenu
+
+        //modifier le contenu du h2 pour marquer 'nouveau titre'
+        //récuperer dans une variable la selection de mon id
+        //Definir un nouveau innerHTML a cette variable
+        monId.innerHTML = 'Nouveau titre <a href="https://www.google.com/">google</a>';
+
+        // var maVar3 =document.getElementById('titre');
+
+        //Selection by tagname
+
+        var mesP = document.getElementsByTagName('p');
+        console.log(mesP);
+        console.log(mesP[1].innerHTML);
+        for(var i=0;i<mesP.length;i++){
+            document.write(mesP[i].innerHTML);
+            console.log(mesP[i].innerHTML);
+            mesP[i].style.color='red';
+            mesP[i].style.backgroundColor = 'yellow';
+            mesP[i].style.marginTop ="50px";
+
+        }
+        // liste des mots clés à appliquer avec .style
+        //https://www.w3schools.com/jsref/dom_obj_style.asp
+        
+        // querySelector
+        var query = document.querySelector('p');
+        var query1 = document.querySelector('#titre');
+        console.log(query);
+        var query2 = document.querySelectorAll('.avion');
+        console.log(query1);
+        console.log(query2[2]);
+        var query = document.querySelectorAll('p');
+        console.log(query[2]);
+
+        //selectionnez airBus3 : modifier son contenu en 'mon airBus'
+        //stylisez cet airBus3 pour y appliquer un fond bleu, un texte blanc et gras
+
+        mesClasses[2].innerHTML='Mon airBus';
+
+        mesClasses[2].style.backgroundColor='blue';
+        mesClasses[2].style.color = 'white';
+        mesClasses[2].style.fontWeight = 'bold';
+        mesClasses[2].style.fontStyle = 'italic';
+        mesClasses[2].style.margin = '0 auto';
+        mesClasses[2].style.width = '200px';
+        mesClasses[2].style.fontSize = '30px';
+        mesClasses[2].style.textDecoration = 'line-through';
+
+        // var query3 = document.querySelectorAll('div.avion');
+        // console.log(query3[2]);
+        // query3[2].innerHTML = 'mon airBus';
+        // query3[2].style.backgroundColor = "blue";
+        // query3[2].style.color ='#fff';
+        // query3[2].style.fontWeight ='bold';
+        // query3[2].style.padding='20px';
+
+
+
+
+
+      
+
+
+
+
+
+
+        </script>
+        
+    </body>
+</html>

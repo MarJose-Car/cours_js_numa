@@ -30,6 +30,8 @@
                 -- 8 -- Conditions
                 -- 9 -- Opérateurs
                 -- 10 -- Boucles
+                -- 11 -- Fonctions prédéfinies
+                -- 12 -- Fonctions Utilisateur
 
             */
             /*****************************************1 Commentaires, syntaxe************************************************
@@ -512,20 +514,104 @@
             document.write('<h2> 10 - Boucles</h2>');
             
             var i = 0;
-            while(i<= 5){
-                document.write((i+1) +'---');
-                i++; // i = i+1 //i++ permet d'incrementer ma variable
-            }
-             while (i <= 6) {
+            // while(i<= 6){
+            //     document.write((i+1) +'---');
+            //     i++; // i = i+1 //i++ permet d'incrementer ma variable
+            // }
+            while (i <= 6) {
+                if(i==6){
+                    document.write(i+'<br>');
+                }
+                else{
                     document.write(i + '---');
+                }
                     i++; 
+                }
+
+            for(var p=0;p<=6;p++){
+                if(p===6){
+                    document.write(p +'<br>');
             }
+                else{
+                    document.write(p + '---');
+                }
+            }
+            /* ---------------------------------------------------------------------------------------------------------------
+            ------------------------------------------11 - Fonctions prédéfinies -----------------------------------------------------------
+            -------------------------------------------------------------------------------------------------------------------
+            */
+            document.write('<h2> 11 - Fonctions prédéfinies</h2>');
 
+            /* Comme toutes les langages de programation JS possède des fonctions. Ce sont des morceaux de code encaosulés qu'on appelle au besoin pour executer une action précise. On distingue les fonctions prédéfinies et les fonctions utilisateurs
+            */
+            //déclaration d'une variable phrase
+            var phrase ='Salut, je m\'appelle Eddy.';
+            var numero = 122;
+            //cette variable contient du texte, c'est en realité un objet string qui possède plusieurs méthodes et une propriété.
+            // Length (propriété. )
+            console.log(phrase.length);
 
+            //indexOf retourne la position de la première lette de 'Eddy' dans la phrase
+            // méthode c'est une fonction appliquée à un objet
 
+            console.log(phrase.indexOf('Eddy'));
 
+            //substr permet de récuperer le morceau d'une chaine des caractères, il prend deux arguments : 1er où commence la découpe, second : combien des caractères
 
-    
+            phrase = 'Bonjour Pierre comment vas tu?';
+            console.log(phrase.length);
+            console.log(phrase.substr(0,7));
+            var mot='Pierre'
+            console.log(phrase.substr(8,6));
+            console.log(phrase.substr(phrase.indexOf('Pierre'),mot.length));
+
+            //https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String/prototype
+
+            // toLowerCase /toUpperCase
+
+            phrase = 'tout est en minuscule';
+           
+            document.write(phrase.toUpperCase());
+
+            phrase=phrase.toUpperCase();
+            console.log(phrase);
+            phrase=phrase.toLowerCase();
+            console.log(phrase);
+
+            /* ---------------------------------------------------------------------------------------------------------------
+            ------------------------------------------12 - Fonctions Utilisateur -----------------------------------------------------------
+            -------------------------------------------------------------------------------------------------------------------
+            */
+            document.write('<h2> 11 - Fonctions Utilisateur</h2>');
+
+            // Déclaration de fonction par Function Statement 
+
+            function maFonction(){
+                return document.write('<p>Nous avons une jounée ensoleillée!</p>');
+            }
+            maFonction();
+
+            /*fonction avec argument : L'argument (dans la parenthése) est facultatif, il permet d'indiquer que l'appel a la fonction nécessite également une information de l'utilisateur. L'argument est définit par un mot clé, et les instructions de la fonction sont sensées reprendre ce mot clé pour signifier ce que l'on fait de cette information*/
+
+            function direBonjour(prenom){
+                var message=document.write('<p>Bonjour ' + prenom + ', comment vas tu?</p>');
+                return message; 
+            }
+            direBonjour('Maria');
+
+            function meteo(saison, temperature){
+                var e;
+                if(saison=='printemps'){
+                    e ='au ';
+                }
+                else{
+                    e ='en ';
+                }
+                return document.write('Nous sommes '+e+ saison +', il fait ' + temperature + ' degré(s)<br>');
+            }
+            meteo('été ', 25);
+            meteo('printemps ',23);
+
 
 
 
