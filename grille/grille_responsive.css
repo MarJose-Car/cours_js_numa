@@ -3,10 +3,11 @@
 }    
 body {
     background: rgb(243, 237, 182);
+    font-family: 'Roboto', sans-serif;
 }
 .conteneur {
     background: rgb(161, 159, 159);
-    width: 1200px;
+    /* width: 1200px; */
     border: 1px solid #fff;
     margin: 0 auto;
 }
@@ -59,6 +60,29 @@ body {
         margin-right: auto;
         border: none;
     }
+     h1 {
+        font-size: 120%;
+        text-align: left;
+        padding-left: 5px;
+        color: #fff;
+    }
+    header p {
+        color: #fff;
+        text-align: left;
+        padding-left: 5px;
+    }
+     .col-xsm-12 {
+        width: 100%;
+    }
+      .row {
+        /* display: flex;
+        flex-direction: row;
+        flex-wrap: wrap; */
+        border: none;
+    }
+    .marge-xsm {
+        margin-left: 0;
+    }
 }
 /* petites tablettes */
 @media(min-width: 321px)and (max-width: 767px) {
@@ -72,11 +96,16 @@ body {
         border: none;
         background: #fff;
     }
-    h1 {
-    font-size: 120%;
-    text-align: left;
-    padding-left: 5px;
-}
+    .row {
+        border: none;
+    }
+    .col-sm-6 {
+        width: 50%;
+    }
+    .col-sm-12 {
+        width: 100%;
+    }
+   
 }
 /* tablettes et ordinateurs portables, deskop*/
 @media (min-width:768px) and (max-width:1096px) {
@@ -88,12 +117,17 @@ body {
         margin-left: auto;
         margin-right: auto;
         background: #fff;
-    }
+    }  
 }
 /* ecran ordinateurs de bureau */
 @media (min-width:1097px) {
+    body {
+        background: lightblue;
+    }
     .conteneur {
-        width: 90%;
+        background: url(asperge.jpg);
+        width: 1200px;
+        border: 1px solid #fff;
         margin: 0 auto;
     }
 }
