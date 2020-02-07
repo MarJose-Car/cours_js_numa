@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="FR-fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Page responsive</title>
+        <!-- feuille de style avec medias query pour le responsive -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="grille_slider.css">
+    </head>
+    <body>
+        <div class="conteneur">
+            <header class="row">
+                <div class=" marge-xsm col-xsm-12 col-10 marge-1">
+                    <h1>La montagne</h1>
+                </div>
+            </header>
+            <!-- plusieurs rangées -->
+            <section class="row">
+                <div class="col-xsm-12 col-sm-6 col-4 ">
+                    <h2>Titre de niveau 2</h2>
+                    <p> 1/Lorem ipsum dolor sit amet consectetur adipisicing elit. In recusandae obcaecati atque perferendis necessitatibus consequatur velit animi debitis iusto quos aspernatur accusantium provident eaque nulla, doloremque consequuntur blanditiis ab vel!</p>
+                </div>
+                <div class="col-xsm-12 col-sm-6 col-4 ">
+                    <h2>Titre de niveau 2</h2>
+                    <p>2/ Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem necessitatibus, neque quos, sunt quisquam, esse aperiam architecto libero accusamus corrupti aspernatur facere. Impedit odio fugit sunt quam voluptatibus quibusdam ducimus.</p>
+                </div>
+                <div class="col-xsm-12  col-sm-12 col-4">
+                    <h2>Titre de niveau 2</h2>
+                    <p> 3/ Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis praesentium esse aperiam id velit labore tenetur sit architecto facere provident quod dolorum repellendus laudantium earum repellat, at neque omnis quos.</p>
+                </div>
+                 <div class="col-xsm-12  col-sm-12 col-4">
+                    <h2>Titre de niveau 2</h2>
+                    <p> 3/ Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis praesentium esse aperiam id velit labore tenetur sit architecto facere provident quod dolorum repellendus laudantium earum repellat, at neque omnis quos.</p>
+                </div>
+                <!-- fin section centrale avec 1 rangée -->
+            </section>
+            <section class="row diaporama">
+                <div class="col-xsm-12  col-sm-12 col-4">
+                    <h2>slide</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, odio. Perferendis possimus accusamus non distinctio unde corrupti sint nesciunt neque excepturi eveniet eum, quidem sapiente quae aliquam debitis, quis voluptas!</p>
+                </div>
+                <div class="col-xsm-12  col-sm-12 col-8">
+                    <h2>DIAPORAMA</h2>
+                        <img src="img/1.jpg" alt="DIAPORAMA" id="monImage">
+                        <!-- <ilg src="img/dolomites.jpg alt="les dolomites id="monImage" -->
+            </section>
+            <footer class="row ">
+                <div class="col-xsm-12 col-6">
+                    <h3>Footer gauche</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa aut cumque, dignissimos voluptatem veniam cupiditate molestiae reprehenderit fuga, impedit dolores in, blanditiis tenetur hic id sint inventore alias quae vel.</p>
+                    <adresse>
+                        De Carvalho Maria<br>
+                        31 Rue Etienne Marcel<br>
+                        93500 Pantin
+                    </adresse>
+                </div>
+                <div class="col-xsm-12 col-6">
+                    <h3>Footer droit</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. At velit doloremque fugiat cumque voluptatem, natus inventore blanditiis veniam nisi sit minima rem facere facilis sequi tempora beatae quidem voluptate! Aliquam.</p>
+                </div>
+            </footer>
+        <!-- fermeture div conteneur -->
+        </div>
+            <script>
+                var img = 0;
+                function f() {
+                    // renomé la variable
+                    //diap +=1//j'incrémente de 1, La valeur d'incrémentation
+                    //monImage.setAttribute''src,'img/dolomites0 + diapo + '.jpg'
+                    img += 1;
+                    monImage.setAttribute("src", "img/" + img + ".jpg");
+                    if (img == 4) {
+                        //clearInterval permet de stopper un setInterval
+                        // clearInterval(timer)
+                        img = 0;
+                    }
+                }
+                //setInterval permet de lancer une fonction tous les X millième de secondes
+                var timer = window.setInterval('f()', 2000);
+
+            </script>
+    </body>
+</html>
